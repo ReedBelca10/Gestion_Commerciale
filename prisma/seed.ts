@@ -1,7 +1,8 @@
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '../lib/prisma'
 import * as bcrypt from 'bcryptjs'
 
-const prisma = new PrismaClient()
+// const prisma = new PrismaClient() // Removed
+
 
 async function main() {
     // 1. Super Admin
