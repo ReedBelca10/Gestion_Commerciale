@@ -28,6 +28,27 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npx prisma generate --schema=prisma/schema.prisma
 
+      - name: Check database connectivity
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import socket
+          from urllib.parse import urlparse, parse_qs
+
+          url = os.environ['DATABASE_URL']
+          parsed = urlparse(url)
+          host = parsed.hostname
+          port = parsed.port or 5432
+          print(f'Connecting to {host}:{port}...')
+          try:
+              with socket.create_connection((host, port), timeout=10):
+                  print('Connection OK')
+          except Exception as e:
+              raise SystemExit(f'Connectivity test failed: {e}')
+          PY
+
       - name: Apply migrations
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
