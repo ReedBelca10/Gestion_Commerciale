@@ -36,7 +36,11 @@ npm install
 # Copier l'exemple de configuration d'environnement
 cp .env.example .env.local
 
-# Lancer les services (DB + Redis)
+# Utiliser la base de données Supabase
+# Remplacez DATABASE_URL par votre chaîne de connexion Supabase PostgreSQL.
+# Si votre mot de passe contient des caractères spéciaux, gardez la valeur entre guillemets.
+
+# Lancer les services (DB + Redis) si vous utilisez Redis local
 docker-compose up -d
 
 # Appliquer les migrations
