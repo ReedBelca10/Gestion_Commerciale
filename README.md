@@ -2,7 +2,7 @@
 
 Plateforme multi-tenant de gestion commerciale développée avec Next.js 14, Prisma, PostgreSQL et Docker.
 
-## 🚀 Fonctionnalités Clés
+## Fonctionnalités Clés
 
 *   **Architecture Multi-Tenant** : Isolation stricte des données entre les commerces.
 *   **Rôles & Permissions** : 
@@ -13,7 +13,7 @@ Plateforme multi-tenant de gestion commerciale développée avec Next.js 14, Pri
 *   **Caisse Temps Réel** : Interface POS interactive avec gestion de stock.
 *   **Sécurité** : Authentification NextAuth, Mots de passe hashés (bcrypt), Middleware de protection.
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 *   **Frontend** : Next.js (App Router), Tailwind CSS, Lucide React.
 *   **Backend** : Next.js API Routes, Prisma ORM.
@@ -21,7 +21,7 @@ Plateforme multi-tenant de gestion commerciale développée avec Next.js 14, Pri
 *   **Infra** : Docker Compose.
 *   **Validation** : Zod (API & Forms).
 
-## 🏁 Installation & Démarrage
+## Installation & Démarrage
 
 ### Pré-requis
 *   Docker & Docker Compose
@@ -51,11 +51,11 @@ npm run dev
 
 Accédez à `http://localhost:3000`.
 
-## 👤 Comptes par défaut (Seed)
+## Comptes par défaut (Seed)
 
 *   **SuperAdmin** : `superadmin@example.com` / `password`
 
-## 📚 Migration de Base de Données
+## Migration de Base de Données
 
 Si vous modifiez `prisma/schema.prisma` :
 
@@ -63,14 +63,14 @@ Si vous modifiez `prisma/schema.prisma` :
 npx prisma migrate dev --name <nom_migration>
 ```
 
-## 🔐 Architecture des Rôles
+## Architecture des Rôles
 
 *   Le **SuperAdmin** crée des **Tenants** (Commerces) via `/superadmin`.
 *   Chaque Tenant a un **Directeur**.
 *   Le Directeur crée des **Employés** (Vendeurs, Magasiniers) via `/admin`.
 *   Les Vendeurs accèdent à `/app` pour la caisse.
 
-## 🛡️ Sécurité (2FA)
+## Sécurité (2FA)
 
 L'authentification à deux facteurs est supportée.
 1.  L'utilisateur scanne le QR Code généré dans son profil.
