@@ -33,6 +33,9 @@ Plateforme multi-tenant de gestion commerciale développée avec Next.js 14, Pri
 # Installer les dépendances
 npm install
 
+# Copier l'exemple de configuration d'environnement
+cp .env.example .env.local
+
 # Lancer les services (DB + Redis)
 docker-compose up -d
 
@@ -42,6 +45,10 @@ npx prisma migrate dev --name init
 # (Optionnel) Seeder la base avec un SuperAdmin
 npx prisma db seed
 ```
+
+### Fichier d'environnement
+
+Copiez `.env.example` vers `.env.local` puis adaptez les variables selon votre système.
 
 ### 2. Démarrage
 
