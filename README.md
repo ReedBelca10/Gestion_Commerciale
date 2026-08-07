@@ -36,9 +36,10 @@ npm install
 # Copier l'exemple de configuration d'environnement
 cp .env.example .env.local
 
-# Utiliser la base de données Supabase
-# Remplacez DATABASE_URL par votre chaîne de connexion Supabase PostgreSQL.
-# Si votre mot de passe contient des caractères spéciaux, gardez la valeur entre guillemets.
+# Utiliser une base de données PostgreSQL en production
+# - Pour la production, configurez `DATABASE_URL` comme secret (GitHub Secrets / Render / Prod provider).
+# - Exemple Render (prod): `postgresql://<user>:<password>@dpg-xxxxx.region-postgres.render.com:5432/<db>?sslmode=require`
+# - Si votre mot de passe contient des caractères spéciaux, conservez la valeur entre guillemets dans les fichiers locaux.
 
 # Lancer les services (DB + Redis) si vous utilisez Redis local
 docker-compose up -d
